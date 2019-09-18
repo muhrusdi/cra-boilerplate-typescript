@@ -3,6 +3,7 @@ const {
   disableEsLint,
   addBabelPresets,
   addWebpackAlias,
+  addBabelPlugins,
   addWebpackResolve,
 } = require("customize-cra");
 const path = require("path");
@@ -28,6 +29,9 @@ module.exports = override(
     ],
     "@babel/preset-env",
     "@babel/preset-react",
+  ),
+  ...addBabelPlugins(
+    "react-hot-loader/babel"
   ),
 
   /**
