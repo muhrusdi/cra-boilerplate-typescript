@@ -8,17 +8,16 @@ const {
 const path = require("path");
 
 const aliases = {
-  "@components": path.resolve(__dirname, "components"),
-  "@containers": path.resolve(__dirname, "containers"),
-  "@hooks": path.resolve(__dirname, "hooks"),
-  "@utils": path.resolve(__dirname, "utils"),
-  "@layout": path.resolve(__dirname, "containers/layout"),
+  "@components": path.resolve(__dirname, "src/components"),
+  "@containers": path.resolve(__dirname, "src/containers"),
+  "@hooks": path.resolve(__dirname, "src/hooks"),
+  "@utils": path.resolve(__dirname, "src/utils"),
+  "@layout": path.resolve(__dirname, "src/containers/layout"),
 };
 
 module.exports = override(
   // disable eslint in webpack
   disableEsLint(),
-
   ...addBabelPresets(
     [
       "@emotion/babel-preset-css-prop",
@@ -41,7 +40,7 @@ module.exports = override(
    */
   addWebpackResolve(
     {
-      extensions: ['.js', '.jsx', '.css']
+      extensions: [".ts", ".js", ".tsx", ".css"]
     }
   ),
 );
